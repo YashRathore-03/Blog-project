@@ -1,0 +1,18 @@
+<h1><%= post.title %></h1>
+<img src="<%= post.imageUrl %>" alt="<%= post.title %>">
+<p><%= post.content %></p>
+
+<h2>Comments</h2>
+<% comments.forEach(comment => { %>
+    <div class="comment">
+        <p><%= comment.text %></p>
+    </div>
+<% }) %>
+<form action="/<%= post.id %>/comment" method="POST">
+    <label for="text">Add a comment:</label>
+    <textarea id="text" name="text" required></textarea>
+    <button type="submit">Comment</button>
+</form>
+
+
+

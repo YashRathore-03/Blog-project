@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <nav>
+        <h1>My Blog</h1>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/new">Create New Post</a>
+            <% if (!session || !session.userId) { %>
+                <a href="/register">Register</a>
+                <a href="/login">Login</a>
+            <% } else { %>
+                <a href="/logout">Logout</a>
+            <% } %>
+        </div>
+        <form action="/search" method="GET">
+            <input type="text" name="q" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+    </nav>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="/register" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <footer>
+        <p>Contact me at: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        <p>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        </p>
+    </footer>
+    <script src="/js/scripts.js"></script>
+</body>
+</html>
+
+
+
